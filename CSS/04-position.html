@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0; /* par défaut 8px */
+    }
+
+    body > div {
+      box-sizing: border-box;
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+    }
+
+    .inner {
+      width: 50px;
+      height: 50px;
+      background-color: yellow;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    .static {
+      position: static;
+      top: 20px; /* ignoré */
+      left: 20px; /* ignoré */
+      /* margin-top: 50px; on peut le déplacer et tous les 
+      éléments suivant du flux avec margin */
+    }
+
+    .absolute {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    .relative {
+      position: relative;
+      top: 20px; /* appliqué */
+      left: 20px; /* appliqué */
+    }
+
+    .fixed {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="static">
+    s
+    <div class="inner">s</div>
+  </div>
+  <div class="absolute">
+    a
+    <div class="inner">a</div>
+  </div>
+  <div class="relative">
+    r
+    <div class="inner">r</div>
+  </div>
+  <div class="fixed">
+    f
+    <div class="inner">f</div>
+  </div>
+  <div class="static">
+    s
+    <div class="inner">s</div>
+  </div>
+</body>
+</html>

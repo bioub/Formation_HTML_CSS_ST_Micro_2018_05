@@ -19,9 +19,21 @@
     </div>
 
     <div>
+        <label for="jaune">Jaune</label>
+        <input type="checkbox" name="q" id="jaune">
+    </div>
+
+    <div>
+        <label>
+          Jaune
+          <input type="checkbox" name="q">
+        </label>
+    </div>
+
+    <div>
       <label>
         Num :
-        <input type="number">
+        <input type="date">
         <input type="range" step="10" min="0" max="100" value="10">
         <select name="num">
           <option value="5">Cinq</option>
@@ -32,7 +44,12 @@
       </label>
     </div>
 
-    <button>Go</button>
+    <button type="button"><b>Button</b></button>
+    <button type="reset">Reset</button>
+    <button type="submit">Submit</button>
+    <input type="button" value="Button">
+    <input type="reset" value="Reset">
+    <input type="submit" value="Submit">
 
   </form>
 
@@ -46,6 +63,58 @@
   </form>
 
   <textarea name="text">Ancienne valeur</textarea>
+
+  <h2>Inscription Google</h2>
+
+  <form action="/inscription" method="post">
+    <section class="form_section nom">
+      <label>Nom</label>
+      <input type="text" name="prenom" placeholder="Prénom">
+      <input type="text" name="nom" placeholder="Nom">
+    </section>
+    <section class="form_section username">
+        <label>Choisissez votre nom d'utilisateur</label>
+        <input type="text" name="username"><input type="text" value="@gmail.com" disabled>
+    </section>
+    <section class="form_section password">
+        <label>Créer un mot de passe</label>
+        <input type="password" name="password">
+    </section>
+    <section class="form_section confirm_password">
+        <label>Confirmer votre mot de passe</label>
+        <input type="password" name="confirm_password">
+    </section>
+    <section class="form_section nom">
+        <label>Date de naissance</label>
+        <input type="number" name="jour" placeholder="Jour">
+        <select name="mois">
+          <option disabled selected hidden>Mois</option>
+          <option value="01">Janvier</option>
+          <option value="02">Février</option>
+          <option value="03">Mars</option>
+          <option value="04">Avril</option>
+          <option value="05">Mai</option>
+          <option value="06">Juin</option>
+          <option value="07">Juillet</option>
+          <option value="08">Aout</option>
+          <option value="09">Septembre</option>
+          <option value="10">Octobre</option>
+          <option value="11">Novembre</option>
+          <option value="12">Décembre</option>
+        </select>
+        <input type="number" name="annee" placeholder="Année">
+    </section>
+    <section class="form_section nom">
+      <label>Sexe</label>
+      <select name="sexe">
+        <option>Homme</option>
+        <option>Femme</option>
+      </select>
+    </section>
+    <section>
+      <button>Inscription</button>
+    </section>
+  </form>
 </body>
 
 </html>

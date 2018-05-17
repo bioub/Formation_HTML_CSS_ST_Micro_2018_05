@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #milieu {
+      background-color: red;
+    }
+
+    p {
+      /* p, h1, nav, sont des blocs (on peut modifier leur tailles) */
+      /* display: block; */
+      background-color: yellow;
+      width: 300px; /* appliqué */
+      height: 200px; /* appliqué */
+
+      /*
+      border-top-color: purple;
+      border-top-width: 10px;
+      border-top-style: solid; /* trait plein 
+      */
+      
+      /* shortcut des 3 propriétés précédentes */
+      border-top: 10px solid purple;
+
+      /* idem que le précédent pour les 4 cotés */
+      border: 10px solid purple;
+
+
+      padding: 10px; /* les 4 côtés */
+
+      box-sizing: border-box;
+    }
+
+    .texte {
+      background-color: blue;
+    }
+
+    span {
+      /* tous les élements sont inlines */
+      /* display: inline; */ /* peut le modifier */
+      background-color: green;
+      width: 300px; /* ignoré */
+      height: 200px; /* ignoré */
+    }
+  </style>
+</head>
+<body>
+  <p style="background-color: coral">Lorem.</p>
+  <p class="texte" id="milieu">Tempore.</p>
+  <p class="texte">Reiciendis.</p>
+  <span>Texte</span>
+</body>
+</html>

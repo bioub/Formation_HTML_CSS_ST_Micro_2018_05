@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    /* clearfix */
+    .clearfix {
+      display: block;
+      content: "";
+      clear: both;
+    }
+    /* end clearfix */
+
+
+    body > div {
+      margin: 10px 0;
+      background: orange;
+    }
+
+    div > div {
+      background: yellow;
+      width: 20px;
+      text-align: center;
+    }
+
+    .inline > div {
+      display: inline;
+    }
+
+    .fil-ariane {
+      background: transparent
+    }
+
+    .fil-ariane > div {
+      display: inline;
+      background: transparent
+    }
+
+    .fil-ariane > div + div::before {
+      content: ' > ';
+    }
+
+    .inline-block > div {
+      display: inline-block;
+    }
+
+    .float > div {
+      float: left;
+    }
+
+  </style>
+</head>
+<body>
+  
+  <!-- div>div*5{$} -->
+  <div class="inline">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </div>
+
+  <div class="fil-ariane">
+    <div>Home</div>
+    <div>Categorie</div>
+    <div>Téléphone</div>
+    <div>Nokia</div>
+  </div>
+
+  <div class="inline-block">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </div>
+
+  <div class="float clearfix">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </div>
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos voluptates exercitationem, natus asperiores, harum, distinctio nulla itaque minus dolore quam repudiandae explicabo! Adipisci, iusto labore mollitia voluptas assumenda sapiente cupiditate.</p>
+
+</body>
+</html>
