@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <h2>Recherche Google</h2>
+  <form action="https://www.google.fr/search" method="GET">
+    <div>
+
+      <label for="recherche">Recherche :</label>
+      <input required type="search" name="q" id="recherche" placeholder="Tapez votre recherche ici">
+
+    </div>
+
+    <div>
+      <label>
+        Num :
+        <input type="number">
+        <input type="range" step="10" min="0" max="100" value="10">
+        <select name="num">
+          <option value="5">Cinq</option>
+          <option>10</option>
+          <option>15</option>
+          <option>20</option>
+        </select>
+      </label>
+    </div>
+
+    <button>Go</button>
+
+  </form>
+
+  <h2>Orange</h2>
+
+  <form action="https://lemoteur.orange.fr/" method="GET">
+    <input type="hidden" name="module" value="orange">
+    <input type="search" name="kw">
+    <button name="todo" value="go1">Go 1</button>
+    <button name="todo" value="go2">Go 2</button>
+  </form>
+
+  <textarea name="text">Ancienne valeur</textarea>
+</body>
+
+</html>
