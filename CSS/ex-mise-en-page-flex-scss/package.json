@@ -1,0 +1,11 @@
+{
+  "devDependencies": {
+    "live-server": "^1.2.0",
+    "node-sass": "^4.9.0"
+  },
+  "scripts": {
+    "serve:dev": "live-server --port 8000",
+    "build:scss:prod": "node-sass --output css --output-style compressed scss",
+    "build:scss:dev": "node-sass --watch --output css scss"
+  }
+}

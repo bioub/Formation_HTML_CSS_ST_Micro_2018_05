@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      min-height: 100vh;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    div {
+      flex-grow: 1;
+      flex-shrink: 1;
+      background-color: aliceblue;
+    }
+
+    div:first-child {
+      display: flex;
+    }
+    
+    div:first-child > span {
+      margin: auto;
+    }
+
+    div:nth-child(2) {
+      display: flex;
+    }
+
+     div:nth-child(2) span {
+       margin: auto;
+       display: block;
+       width: 70%;
+     }
+  </style>
+</head>
+<body>
+  <div>
+    <span>1 ligne</span>
+  </div>
+
+  <div>
+    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis impedit corrupti quae obcaecati fugiat quod nostrum iusto, harum eum tempora pariatur similique? Dolores libero inventore magni, sit laborum cumque error!</span>
+  </div>
+</body>
+</html>
