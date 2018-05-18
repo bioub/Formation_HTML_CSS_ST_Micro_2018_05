@@ -7,7 +7,7 @@
   <title>Document</title>
   <style>
     /* clearfix */
-    .clearfix {
+    .clearfix::after {
       display: block;
       content: "";
       clear: both;
@@ -51,6 +51,31 @@
       float: left;
     }
 
+    .flex {
+      display: flex;
+      /* flex-direction: column-reverse; */
+      /* justify-content: space-between; */
+      align-items: flex-end;
+      flex-wrap: wrap-reverse;
+    }
+
+    .flex > div {
+      width: 150px;
+    }
+
+    .flex > :nth-child(2) {
+      /* order: 1; */
+      flex-grow: 1; /* 1 fraction (1/3 de l'espace restant) */
+      background: blue;
+      align-self: flex-start;
+    }
+
+    .flex > :nth-child(3) {
+      /* order: 1; */
+      flex-grow: 2; /* 1 fraction (2/3 de l'espace restant) */
+      background: green;
+      height: 50px;
+    }
   </style>
 </head>
 <body>
@@ -87,7 +112,13 @@
     <div>5</div>
   </div>
 
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos voluptates exercitationem, natus asperiores, harum, distinctio nulla itaque minus dolore quam repudiandae explicabo! Adipisci, iusto labore mollitia voluptas assumenda sapiente cupiditate.</p>
+  <div class="flex">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+  </div>
 
 </body>
 </html>
