@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body, .container {
+  min-height: 100vh;
+}
+
+html {
+  color: #222;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: lighten($linkColor, 30%);
+}
+
+nav {
+  > h2 {
+    display: none;
+  }
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+  }
+}
+
+a {
+  color: $linkColor;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: darken($linkColor, 30%);
+  }
+}

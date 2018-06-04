@@ -7,48 +7,11 @@ Exercice :
 de ces 2 couleurs (en utilisant les fonction darken ou lighten, saturate...)
 */
 
-/* generic */
-* {
-  box-sizing: border-box;
-}
-
-html, body, .container {
-  min-height: 100vh;
-}
-
-html {
-  color: #222;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-body {
-  margin: 0;
-  background-color: aliceblue;
-}
-
-nav > h2 {
-  display: none;
-}
-
-nav ul {
-  list-style-type: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-a {
-  color: cornflowerblue;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-a:active {
-  color: yellow;
-}
-/* end generic */
+// ITCSS
+@import 'variables';
+@import 'generic';
+@import 'breadcrumb';
+@import 'utilities';
 
 .container {
   width: 980px;
@@ -58,105 +21,100 @@ a:active {
   flex-direction: column;
 }
 
-/* header */
 header {
-  background-color: rgb(136, 136, 190);
+  background-color: $mainColor;
   height: 150px;
   color: #fff;
   position: relative;
-}
 
-header h1 {
-  margin: 0;
-  padding: 5px;
-}
+  h1 {
+    margin: 0;
+    padding: 5px;
+  }
 
-header nav {
-  background-color: aquamarine;
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 10px;
-  color: cornflowerblue;
-}
+  nav {
+    background-color: lighten($mainColor, 10%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 10px;
+    color: white;
 
-header nav li {
-  display: inline;
-}
+    li {
+      display: inline;
 
-header nav li:not(:last-child)::after {
-  content: ' / ';
+      &:not(:last-child)::after {
+        content: ' / ';
+      }
+    }
+  }
 }
-/* end header */
 
 /* .body */
 .body {
   display: flex;
   flex-grow: 1;
+
+  > aside {
+    width: 200px;
+    padding: 10px;
+    background-color: lighten($mainColor, 30%);
+  }
+
+  > main {
+    flex-grow: 1;
+    padding: 10px;
+  }
 }
 
-.body > aside {
-  width: 200px;
-  padding: 10px;
-  background-color: yellow;
-}
-
-.body > main {
-  flex-grow: 1;
-  padding: 10px;
-}
-/* end .body */
-
-/* aside */
-aside li {
+aside ul li {
   height: 50px;
   background-color: orange;
-  margin-bottom: 10px
+  margin-bottom: 10px;
+
+  a {
+    display: block;
+    height: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 50px;
+  
+    transition-property: all;
+    transition-duration: 400ms;
+    transition-timing-function: cubic-bezier(.17,.67,.41,2.01);
+  
+    transition: all 400ms cubic-bezier(.17,.67,.41,2.01);
+
+    &:hover {
+      font-size: 1.6rem;
+      background-color: salmon;
+    }
+  }
 }
 
-aside li a {
-  display: block;
-  height: 100%;
-  text-align: center;
-  color: #fff;
-  font-size: 1.2rem;
-  line-height: 50px;
-
-  transition-property: all;
-  transition-duration: 400ms;
-  transition-timing-function: cubic-bezier(.17,.67,.41,2.01);
-
-  transition: all 400ms cubic-bezier(.17,.67,.41,2.01);
-}
-
-aside li a:hover {
-  font-size: 1.6rem;
-  background-color: salmon;
-}
-/* end aside */
 
 /* .gallery */
 .gallery {
   display: flex;
   flex-wrap: wrap;
-}
 
-.gallery > div {
-  margin-right: 9px;
-  margin-bottom: 9px;
-  width: calc(33.33% - 6px);
-  height: 150px;
-  text-align: center;
-  overflow: hidden;
-  border: 1px solid black;
-  box-shadow: 1px 1px 1px gray;
-}
+  > div {
+    margin-right: 9px;
+    margin-bottom: 9px;
+    width: calc(33.33% - 6px);
+    height: 150px;
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid black;
+    box-shadow: 1px 1px 1px gray;
 
-.gallery > div:nth-child(3n) {
-  margin-right: 0;
-}
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
 
-.gallery > div img {
-  height: 100%;
+    img {
+      height: 100%;
+    }
+  }
 }
-/* end .gallery */
