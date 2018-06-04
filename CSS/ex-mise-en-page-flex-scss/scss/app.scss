@@ -19,6 +19,10 @@ de ces 2 couleurs (en utilisant les fonction darken ou lighten, saturate...)
   margin-right: auto;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: $mobileBreakpoint) {
+    width: 100%;
+  }
 }
 
 header {
@@ -59,11 +63,20 @@ header {
     width: 200px;
     padding: 10px;
     background-color: lighten($mainColor, 30%);
+  
+    @media (max-width: $mobileBreakpoint) {
+      width: 100%;
+    }
   }
 
   > main {
     flex-grow: 1;
     padding: 10px;
+  }
+
+  @media (max-width: $mobileBreakpoint) {
+    width: 100%;
+    flex-direction: column;
   }
 }
 

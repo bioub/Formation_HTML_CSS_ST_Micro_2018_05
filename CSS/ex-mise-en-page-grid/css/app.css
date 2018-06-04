@@ -45,12 +45,28 @@ a:active {
   width: 980px;
   margin-left: auto;
   margin-right: auto;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-areas: "h h"
+                       "a m";
+
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 150px 1fr;
+}
+
+@media (max-width: 1000px) {
+  .container {
+    width: 100%;
+    grid-template-areas: "h"
+                         "a"
+                         "m";
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px auto 1fr;
+  }
 }
 
 /* header */
 header {
+  grid-area: h;
   background-color: rgb(136, 136, 190);
   height: 150px;
   color: #fff;
@@ -81,6 +97,7 @@ header nav li:not(:last-child)::after {
 /* end header */
 
 /* .body */
+/*
 .body {
   display: flex;
   flex-grow: 1;
@@ -96,9 +113,16 @@ header nav li:not(:last-child)::after {
   flex-grow: 1;
   padding: 10px;
 }
+*/
 /* end .body */
 
 /* aside */
+aside {
+  grid-area: a;
+  padding: 10px;
+  background-color: yellow;
+}
+
 aside li {
   height: 50px;
   background-color: orange;
@@ -126,17 +150,29 @@ aside li a:hover {
 }
 /* end aside */
 
+/* main */
+main {
+  grid-area: m;
+  padding: 10px;
+}
+/* end main */
+
 /* .gallery */
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 150px;
+  grid-gap: 9px;
+  gap: 9px;
 }
 
 .gallery > div {
+  /*
   margin-right: 9px;
   margin-bottom: 9px;
   width: calc(33.33% - 6px);
   height: 150px;
+  */
   text-align: center;
   overflow: hidden;
   border: 1px solid black;
